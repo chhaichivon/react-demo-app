@@ -1,16 +1,16 @@
 import React, {Component} from "react";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import Home from "./Home";
-import Register from "./Register";
-import Login from "./Login";
-import PrivateRoute from "../route/PrivateRoute";
-import CategoryList from "./CategoryList";
-import CategoryDetail from "./CategoryDetail";
-import ProductList from "./ProductList";
-import ProductDetail from "./ProductDetail";
-import Profile from "./Profile";
+import Home from "../component/Home";
+import Register from "../component/Register";
+import Login from "../component/Login";
+import PrivateRoute from "./PrivateRoute";
+import CategoryList from "../component/CategoryList";
+import CategoryDetail from "../component/CategoryDetail";
+import ProductList from "../component/ProductList";
+import ProductDetail from "../component/ProductDetail";
+import Profile from "../component/Profile";
 
-class MyApp extends Component {
+class AppRoute extends Component {
 
     render() {
         return (
@@ -36,4 +36,4 @@ class MyApp extends Component {
 
 }
 
-export default MyApp;
+export default AppRoute;

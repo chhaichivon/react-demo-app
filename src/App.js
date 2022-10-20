@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import './App.css';
-import MyApp from "./component/MyApp";
+import AppRoute from "./route";
 
 class App extends Component {
     render() {
         return (
             <div className="container">
-                <MyApp/>
-                {/*<Footer/>*/}
+                <AppRoute/>
             </div>
         );
     }
