@@ -4,11 +4,7 @@ import AppRoute from "./route";
 
 class App extends Component {
     render() {
-        return (
-            <div className="container">
-                <AppRoute/>
-            </div>
-        );
+        return <AppRoute/>;
     }
 }
 

@@ -10,6 +10,9 @@ import ProductList from "../component/ProductList";
 import ProductDetail from "../component/ProductDetail";
 import Profile from "../component/Profile";
 
+
+import HomePage from "../view/home";
+
 class AppRoute extends Component {
 
     render() {
@@ -19,7 +22,7 @@ class AppRoute extends Component {
                     <>
                         {/*<MenuComponent/>*/}
                         <Switch>
-                            <Route path="/" exact component={Home}/>
+                            <Route path="/" exact component={HomePage}/>
                             <Route path="/login" exact component={Login}/>
                             <Route path="/register" exact component={Register}/>
                             <Route path='/category' exact component={CategoryList}/>
