@@ -1,12 +1,20 @@
-import axios from 'axios'
+import axios, {AxiosRequestConfig, AxiosResponse} from 'axios'
 
-const API_URL = process.env.REACT_APP_API_URL
-const SERVER_API_URL_PRODUCTS = API_URL + process.env.REACT_APP_PRODUCT_URL
+const SERVER_API_URL_PRODUCTS = process.env.REACT_APP_PRODUCT_URL
 
 class ProductService {
 
-    findAll() {
-        return axios.get(`${SERVER_API_URL_PRODUCTS}`,);
+    async findAll() {
+        const config: AxiosRequestConfig = {
+            method: 'get',
+            url: `${SERVER_API_URL_PRODUCTS}`,
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        };
+        const response: AxiosResponse = await axios(config);
+        console.log(response);
+        return response;
     }
 
     findBy(id) {

@@ -1,7 +1,7 @@
 
 Build
     
-    docker build -t chhaichivon/react-demo-app:v1.0.2 .
+    docker build -t chhaichivon/react-demo-app:v1.0.5 .
 
 Run 
 
