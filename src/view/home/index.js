@@ -19,6 +19,9 @@ class HomePage extends React.Component {
     }
 
     componentDidMount() {
+        console.log("REACT_APP_API_URL : ")
+        console.log(process.env.REACT_APP_API_URL)
+
         CategoryService.findAll().then((res) => {
             console.log(res.data)
             this.setState({categories: res.data.data});

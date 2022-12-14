@@ -1,13 +1,11 @@
-import axios, {AxiosRequestConfig, AxiosResponse} from 'axios'
-
-const SERVER_API_URL_PRODUCTS = process.env.REACT_APP_PRODUCT_URL
+import axios , { AxiosRequestConfig, AxiosResponse} from 'axios'
 
 class ProductService {
 
     async findAll() {
         const config: AxiosRequestConfig = {
             method: 'get',
-            url: `${SERVER_API_URL_PRODUCTS}`,
+            url: `/api/v1/product?limit=8&page=0`,
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -18,19 +16,19 @@ class ProductService {
     }
 
     findBy(id) {
-        return axios.get(`${SERVER_API_URL_PRODUCTS}/${id}`,);
+        return axios.get(`/api/v1/product/${id}`,);
     }
 
-    create(category) {
-        return axios.post(`${SERVER_API_URL_PRODUCTS}`, category);
+    create(product) {
+        return axios.post(`/api/v1/product`, product);
     }
 
-    update(category) {
-        return axios.put(`${SERVER_API_URL_PRODUCTS}`, category);
+    update(id, product) {
+        return axios.put(`/api/v1/product/${id}`, product);
     }
 
     delete(id) {
-        return axios.delete(`${SERVER_API_URL_PRODUCTS}/${id}`,);
+        return axios.delete(`/api/v1/product/${id}`,);
     }
 
 }

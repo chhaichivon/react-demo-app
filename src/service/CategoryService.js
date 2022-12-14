@@ -2,10 +2,6 @@ import axios , { AxiosRequestConfig, AxiosResponse} from 'axios'
 
 import {header} from './Header';
 
-const SERVER_API_URL_CATEGORIES = process.env.REACT_APP_CATEGORY_URL
-
-const url = SERVER_API_URL_CATEGORIES;
-
 const config = {
     headers: header
 };
@@ -15,7 +11,7 @@ class CategoryService {
     async findAll() {
         const config: AxiosRequestConfig = {
             method: 'get',
-            url: `${SERVER_API_URL_CATEGORIES}`,
+            url: `/api/v1/category`,
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -26,19 +22,19 @@ class CategoryService {
     }
 
     findBy(id) {
-        return axios.get(`${SERVER_API_URL_CATEGORIES}/${id}`,config);
+        return axios.get(`/api/v1/category/${id}`,config);
     }
 
     create(category) {
-        return axios.post(`${SERVER_API_URL_CATEGORIES}`, category);
+        return axios.post(`/api/v1/category`, category);
     }
 
-    update(category) {
-        return axios.put(`${SERVER_API_URL_CATEGORIES}`, category);
+    update(id, category) {
+        return axios.put(`/api/v1/category${id}`, category);
     }
 
     delete(id) {
-        return axios.delete(`${SERVER_API_URL_CATEGORIES}/${id}`,);
+        return axios.delete(`/api/v1/category/${id}`,);
     }
 
 }
